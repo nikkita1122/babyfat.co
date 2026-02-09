@@ -1,0 +1,628 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*border-box keeps things from over-flowing without using math, considered best practice*/
+    font-family:'League Spartan', sans-serif; /*says use Spartan font first and if it doesn't work, use any sans-serif font.*/
+}
+
+/*these h1 etc things mean that every time we type h 1 etc we don't have to retype the font size and color we want, it references here*/
+h1 {
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}
+
+
+h4 {
+    font-size: 20px;
+    color: #222;
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+/*h6 {
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}*/
+
+p {
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+} /*this is margin*/
+
+.section-p1 {
+    padding: 40px 80px;
+} /*this is padding*/
+
+.section-m1 {
+    margin: 40px 0;
+} /*this is margin*/
+
+body {
+    width: 100%;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.icon-bag {
+    width: 24px;
+    height: 24px;
+    fill: #312F2C;
+    cursor: pointer;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 14px 36px;
+    border: 2px solid #F9C6D4;
+    border-radius: 999px;
+    background: transparent;
+    color:#312F2C;
+    font-size:16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: #F9C6D4;
+    color: #FAF9F6;
+}
+
+.btn-cart { /*this one is for the add to cart button in the sproduct page*/
+  display: inline-block;
+    padding: 7px 18px;
+    border: 2px solid #FF0000;
+    border-radius: 999px;
+    background: #312F2C;
+    color: #FAF9F6;
+    font-size:16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-cart:hover {
+    background: #F9C6D4;
+    color: #FAF9F6;
+    border: 2px solid #F9C6D4;
+}
+
+.add-to-cart { /*this one is for the add to cart plus sign button in the shop page*/
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-plus {
+    width: 22px;
+    height: 22px;
+    fill: #312F2C;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.add-to-cart:hover .icon-plus {
+    transform: scale(1.1);
+    color:#F9C6D4;
+}
+/* Header Start */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #FAF9F6;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    z-index: 999;
+    position: sticky; /*keeps it at the top of the page. i actually don't know if i like that?*/
+    top: 0;
+    left: 0;
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none; /*gets rid of the bullet points in the navbar*/
+    padding: 0 20px;
+    position: relative; /*i dont really get it but this tells the line that forms under the sections where to start*/
+}
+
+#navbar li a{
+    text-decoration: none; /*gets rid of underline */
+    font-size: 16px;
+    font-weight: 400;
+    color: #312F2C;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #088178;
+}
+
+#navbar li a:active::after,
+#navbar li a:hover::after {
+    content:"";
+    width: 40%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#hero{
+    background-image: url("assets/boarder3crop.jpeg");
+    height: 70vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+#hero h4 {
+    padding-bottom: 15px;
+}
+
+#hero h1 {
+    color:#FAF9F6;
+}
+
+#hero button {
+    border: 0;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+#Collection{
+    text-align: center;
+}
+
+#Collection .product-container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+
+#Collection .product{
+    width:23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #dedede;
+    border-radius:25px;
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.2);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative;
+}
+
+#Collection .product:hover{
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.6);  
+}
+
+#Collection .product img{
+    width:100%;
+    border-radius: 20px;
+}
+
+/*#Collection .product .add-to-cart{
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+}*/
+/* that makes the add to cart plus sign appear in the right corner but i dont really like it so*/
+
+#newsletter {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color:#312F2C;
+}
+
+#newsletter h4{
+    font-size: 22px;
+    font-weight: 700;
+    color:#FAF9F6;
+}
+
+#newsletter p{
+    font-size: 14px;
+    font-weight: 600;
+    color:#dedede;
+}
+
+#newsletter p span{
+    font-size: 14px;
+    font-weight: 600;
+    color:#F9C6D4;
+}
+
+#newsletter .form {
+    display: flex;
+    width: 40%;
+}
+#newsletter input {
+    height: 3.125rem;
+    padding: 0 1.25em;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#newsletter button {
+    padding: 0 32px;
+    background-color:#dedede;
+    color:#312F2C;
+    white-space: nowrap;
+    border-radius: 4px;
+    border: transparent;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+#newsletter button:hover {
+    background-color:#F9C6D4;
+    color: #FAF9F6;
+}
+
+.social-icon {
+    width: 22px;
+    height: 22px;
+    fill: #FAF9F6;
+    transition: fill 0.25s ease, transform 0.25s ease;
+}
+
+.icon a:hover .social-icon {
+    fill:#F9C6D4;
+    transform: scale(1.1);
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #dedede;
+}
+
+footer .col {
+    flex: 1;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+/*footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #dedede;  
+}
+
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+*/
+
+footer .logo {
+    width: 80px;  /* adjust smaller or larger */
+    height: auto; /* keeps aspect ratio */
+    margin-bottom: 30px;
+}
+
+footer .follow {
+    margin-top: 20px;
+}
+
+footer h4 {
+    font-size: 14px;
+    padding-bottom: 20px;
+    color:#312F2C;
+}
+
+footer p {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+footer a { /*targets links by using a for anchor text*/
+    font-size: 14px;
+    text-decoration: none; /*we don't want the underline on our links*/
+    color: #FAF9F6;
+    margin-bottom: 10px;
+}
+
+footer a:hover {
+    color:#F9C6D4;
+}
+
+/*footer .copyright {
+    width: 100%;
+    text-align: center;
+}*/
+
+footer .copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #312F2C;
+}
+
+#prodetails {
+    display: flex;
+    margin-top: 20px;
+
+}
+
+#prodetails .single-pro-image{
+    width: 40%;
+    margin-right: 50px;
+}
+
+#prodetails .single-pro-details{
+    width: 50%;
+    padding-top: 30px;
+}
+
+#prodetails .single-pro-details h2{
+    padding: 40px 0 20px 0;
+}
+
+#prodetails .single-pro-details h4{
+    font-size: 26px;
+}
+
+#prodetails .single-pro-details select{
+    display: block;
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: transparent; 
+}
+
+#prodetails .single-pro-details input{
+    width: 40px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    border-radius: 999px;
+    margin-right: 5px;
+    border: transparent;
+ }
+
+#prodetails .single-pro-details span{
+    line-height: 25px;
+}
+  
+#prodetails .product-details-title {
+       font-size: 26px;
+    margin-top: 40px;
+}
+
+.small-img-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col {
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+
+#about-header{
+    background-image: url("assets/Abt-pink-crp.jpg");
+    height: 50vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    padding-right: 100px;
+    align-items: flex-end; /*flex-end aligns to the right; flex-start aligns to the left*/
+    justify-content: center;
+}
+
+#about-header h4 { /*about-header is the sunset picture banner*/
+    color:#FAF9F6;
+    padding-bottom: 15px;
+}
+
+#about-header h1 {
+    color:#FAF9F6;
+}
+
+#about-header h1 span{
+    color:#F9C6D4;
+}
+
+#about-head {
+    display:flex;
+    align-items: center;
+}
+
+#about-head img{/*about-head is the body of the about page*/
+    width:50%;
+    height: auto;
+}
+
+#about-head div { /*i didn't know you could target div tags!*/
+    padding-right: 40px;
+}
+
+#form-details {
+    display: flex;
+   justify-content: center; /* centers form horizontally */
+}
+#form-details form{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#form-details form input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    outline: none;
+    margin-bottom: 20px;
+    border: 2px solid #312F2C;
+}
+
+.normal {
+ display: inline-block;
+    padding: 7px 18px;
+    border: 2px solid;
+    border-radius: 4px;
+    background: #312F2C;
+    color: #FAF9F6;
+    font-size:16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.normal:hover {
+    background: #F9C6D4;
+    color: #FAF9F6;
+    border: 2px solid #F9C6D4;
+}
+
+#cart table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+
+#cart table img{
+    width: 70px;
+}
+
+#cart table td:nth-child(1){
+    width: 100px;
+    text-align: center;
+}
+
+#cart table td:nth-child(2){
+    width: 150px;
+    text-align: center;
+}
+
+#cart table td:nth-child(3){
+    width: 250px;
+    text-align: center;
+}
+
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6){
+    width: 150px;
+    text-align: center;
+}
+
+#cart table td:nth-child(5) input{ /*to change the quantity input box size*/
+    width: 70px;
+    padding: 10px 5px 10px 15px;
+}
+
+#cart table tbody tr td { /*some space between row header and the following data*/
+    padding-top: 15px;
+}
+
+#cart table tbody td {
+    font-size: 13px;
+}
+
+#cart-add {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#coupon {
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+#coupon h3,
+#subtotal h3{
+    padding-bottom: 15px;
+}
+
+#coupon input{
+    padding: 7px 20px;
+    outline: none;
+    width: 60%;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 2px solid #F9C6D4;
+}
+
+#subtotal {
+    width: 50%;
+    margin-bottom:30px;
+    border: 1px solid #dedede; padding: 30px;
+}
+
+#subtotal table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#subtotal table td{
+    width: 50%;
+    border: 1px solid #dedede;
+    padding: 10px;
+    font-size: 13px;
+}
+
+#subtotal button {
+    
+    display: block; /*you have to make it a block so that you can center it
+    margin: 20px auto;
+    background-color: #FF0000;
+    border-radius: 999px;
+}
